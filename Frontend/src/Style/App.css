@@ -1,0 +1,46 @@
+/* .nav{
+    display: flex;
+  gap: 400px;
+  background: #a00c8c;
+  padding: 1px;
+    /* position: absolute; */
+
+/* .content{
+       display: flex;
+  gap: 20px;
+  background: #400237;
+  padding: 10px;
+  position: absolute;
+
+} */
+
+
+.navbar {
+  display: flex;      /* so items sit side by side */
+         /* space between items */
+  background: #282c3444;
+  padding: 10px;
+  /* margin-left: 30px; */
+  
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+   gap: 200px; 
+   padding-left: 100px;
+   justify-content: space-around;
+   
+}
+
+.navbar a:hover {
+  color: red
+}
+
+.Menu{
+  background-color: red;
+}
+.Reservation{
+  background-color: red;
+}

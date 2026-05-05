@@ -1,0 +1,190 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@custom-variant dark (&:is(.dark *));
+
+body {
+  font-family: 'Inter', sans-serif;
+  @apply bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50;
+}
+
+:root {
+  color-scheme: light;
+  --app-bg: #f7f5f1;
+  --app-surface: #ffffff;
+  --app-surface-soft: #f8fafc;
+  --app-elevated: #ffffff;
+  --app-border: #e5e7eb;
+  --app-text: #111827;
+  --app-muted: #64748b;
+  --app-accent: #4f46e5;
+  --app-accent-soft: #eef2ff;
+}
+
+.dark {
+  color-scheme: dark;
+  --app-bg: #080b12;
+  --app-surface: #101622;
+  --app-surface-soft: #151c2b;
+  --app-elevated: #182132;
+  --app-border: #263244;
+  --app-text: #f8fafc;
+  --app-muted: #a4afc1;
+  --app-accent: #8b9cff;
+  --app-accent-soft: rgba(99, 102, 241, 0.18);
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  background: var(--app-bg);
+  color: var(--app-text);
+}
+
+body {
+  transition: background-color 240ms ease, color 240ms ease;
+}
+
+.dark :where(.bg-white, .bg-gray-50, .bg-slate-50, .bg-slate-100, .bg-base-100) {
+  background-color: var(--app-surface) !important;
+}
+
+.dark :where(.bg-gray-100, .bg-slate-200, .bg-base-200, .bg-base-300) {
+  background-color: var(--app-surface-soft) !important;
+}
+
+.dark [class*="bg-[#f8fafc]"],
+.dark [class*="bg-[#faf9f8]"],
+.dark [class*="bg-[#f5f5f7]"] {
+  background-color: var(--app-bg) !important;
+}
+
+.dark :where(.text-slate-900, .text-gray-900, .text-slate-800, .text-gray-800, .text-black) {
+  color: var(--app-text) !important;
+}
+
+.dark :where(.text-slate-700, .text-gray-700, .text-slate-600, .text-gray-600) {
+  color: #cbd5e1 !important;
+}
+
+.dark :where(.text-slate-500, .text-gray-500, .text-slate-400, .text-gray-400) {
+  color: var(--app-muted) !important;
+}
+
+.dark :where(.border-slate-100, .border-slate-200, .border-slate-300, .border-gray-100, .border-gray-200, .border-gray-300, .border-base-300) {
+  border-color: var(--app-border) !important;
+}
+
+.dark :where(input:not(.input-premium), textarea:not(.input-premium), select:not(.input-premium)) {
+  background-color: var(--app-surface-soft);
+  color: var(--app-text);
+  border-color: var(--app-border);
+}
+
+.dark :where(input::placeholder, textarea::placeholder) {
+  color: #7f8ca3;
+}
+
+.premium-surface {
+  background: color-mix(in srgb, var(--app-surface) 94%, transparent);
+  border: 1px solid var(--app-border);
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.10);
+}
+
+.dark .premium-surface {
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+}
+
+@keyframes textReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+    letter-spacing: 0.1em;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: 0;
+  }
+}
+
+.animate-textReveal {
+  animation: textReveal 1s ease forwards;
+}
+.glass {
+  background: rgba(255,255,255,0.72);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.4);
+}
+
+.dark .glass {
+  background: rgba(16, 22, 34, 0.78);
+  border-color: rgba(148, 163, 184, 0.18);
+}
+
+.shadow-soft {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.input-premium {
+  width: 100%;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  outline: none;
+  transition: all 0.25s ease;
+
+  /* LIGHT */
+  background: rgba(255,255,255,0.7);
+  color: #0f172a;
+  border: 1px solid rgba(0,0,0,0.06);
+
+  backdrop-filter: blur(12px);
+}
+
+.input-premium::placeholder {
+  color: #94a3b8;
+}
+
+/* DARK MODE */
+.dark .input-premium {
+  background: rgba(16,22,34,0.75);
+  color: #f8fafc;
+  border: 1px solid rgba(148,163,184,0.15);
+}
+
+.dark .input-premium::placeholder {
+  color: #7f8ca3;
+}
+
+/* FOCUS */
+.input-premium:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+}
+
+/* Chrome, Safari */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.5);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(100,116,139,0.3) transparent;
+}
