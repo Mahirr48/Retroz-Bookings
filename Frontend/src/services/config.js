@@ -1,5 +1,5 @@
 export const BACKEND_URL =
-  import.meta.env.VITE_API_URL || "https://hotel-booking-backend-ztne.onrender.com";
+  import.meta.env.VITE_API_URL || "https://retroz-bookings-backend.onrender.com";
 
 export const API_BASE_URL = `${BACKEND_URL}/api`;
 
